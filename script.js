@@ -28,7 +28,7 @@ function capturePhoto() {
  function uploadToAzureBlobStorage(blob) {
 
     const accountName = 'lakeinfo';
-    const sasToken = 'sp=racwle&st=2024-04-05T12:50:47Z&se=2024-04-05T20:50:47Z&spr=https&sv=2022-11-02&sr=c&sig=7KfyLZhh%2FZ%2Byk4BQ2%2B4ib9whj2HDHc4LUxdHUbj6oy0%3D';
+    const sasToken = 'Your_SAS_Token_Here';
     const containerName = 'bronze';
 
     // Cria a URL de acesso ao Blob Storage
@@ -83,7 +83,7 @@ captureButton.addEventListener('click', capturePhoto);
 const ReproduzirVoz = (resposta) => {
 
     var myHeaders = new Headers();
-    myHeaders.append("Ocp-Apim-Subscription-Key", "260de0888d04442a98b8cd0dba2ca875");
+    myHeaders.append("Ocp-Apim-Subscription-Key", "Your_Subscription_Key_Here");
     myHeaders.append("Content-Type", "application/ssml+xml");
     myHeaders.append("X-Microsoft-OutputFormat", "audio-16khz-128kbitrate-mono-mp3");
     myHeaders.append("User-Agent", "curl");
@@ -123,12 +123,12 @@ const ReproduzirVoz = (resposta) => {
 // Criamos o método para consultar a API do OpenAI
 const ConsultarOpenAI = (pergunta) => {
 
-    openAIKey = "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";
+    openAIKey = "Your_OpenAI_Key_Here";
 
     // Aqui vamos configurar o cabeçalho da requisição
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
-    myHeaders.append("api-key", "4e958ea7e8e24b7782ce5546f484d402");
+    myHeaders.append("api-key", "Your_OpenAI_Key_Here");
 
     // Aqui vamos configurar o corpo da requisição
     var raw = JSON.stringify({
@@ -161,7 +161,7 @@ const ConsultarOpenAI = (pergunta) => {
 // Função para enviar uma requisição para o serviço Custom Vision da Azure
 function sendCustomVisionRequest(imageUrl) {
     const predictionUrl = 'https://eastus.api.cognitive.microsoft.com/customvision/v3.0/Prediction/c11fb3c4-f880-4470-bd50-cc21a143f8b2/detect/iterations/Iteration1/url';
-    const predictionKey = 'e0d85710c92444db9c3b3a9153537732';
+    const predictionKey = 'Your_Prediction_Key_Here';
 
     // Cria um objeto XMLHttpRequest
     const xhr = new XMLHttpRequest();
